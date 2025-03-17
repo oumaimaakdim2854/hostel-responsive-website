@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+
+
+body{
+    font-family: "Markazi Text", serif;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 15px 30px; */
+    padding: 0 10%;
+}
+
+.logo {
+    padding-left: 20px; /* instead of margin-left */
+    padding-top: 14px; /* adjust as needed */
+    width: 100px;
+}
+
+.nav-icons {
+    margin-right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.notification-icon {
+    width: 30px;
+    height:30px;
+    flex-shrink: 0;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+
+
+main {
+    padding: 20px 5%;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    padding: 15px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    gap: 20px;
+    
+}
+
+.search-icon {
+    width: 30px;
+    height:30px;
+    margin-left: 30px;
+}
+
+.search-box span {
+    color: rgba(154, 154, 157, 0.80);
+    font-size:20px;
+    
+}
+
+
+
+section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 20px auto; /* Centers it horizontally */
+
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.see-more {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgba(61, 118, 162, 0.87);
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 43px;
+}
+
+
+.see-more:hover {
+    text-decoration: underline;
+    color: rgba(22, 59, 88, 0.87);
+}
+
+.card-body {
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content h1 {
+    font-size: 1.8rem;
+    text-align: center; color: rgba(255, 255, 255, 0.88);    ;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+.menu-toggle {
+    display: none;
+}
+
+/* Make menu icon clickable */
+.menu-icon-container {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Background overlay that covers the entire page */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Menu Overlay styling */
+.menu-overlay {
+    position: fixed;
+    top:0px;
+    right: -50%;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(61, 118, 162, 0.95);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.menu-toggle:checked ~ .background-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* When checkbox is checked, show the menu */
+.menu-toggle:checked ~ .menu-overlay {
+    right: 0%;
+}
+
+/* Close button styling */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu content styling */
+.menu-links {
+    list-style: none;
+    padding: 80px 30px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-links li {
+    margin-bottom: 30px;
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-links a:hover {
+    transform: translateX(10px);
+    color: #2623cf;
+}
+
+
+
+
+
+
+footer {
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 7px 5px rgba(0, 0, 0, 0.10);
+    color: #3D76A2;
+    padding: 40px 0 20px;
+    border-radius: 15px 15px 5px 5px;
+}
+
+footer .container {
+    max-width:600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    width: 22%; /* Slightly less than 25% to account for margins */
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #404244;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #FFA020;
+    padding-left: 5px;
+}
+
+/* Newsletter form taking full width below the lists */
+.footer-col:last-child {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-col form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+    color: rgba(154, 154, 157, 0.79);
+}
+
+.inputEmail {
+    width: 70%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+
+    outline: none;
+}
+
+.inputSubmit {
+    width: 30%;
+    padding: 12px 15px;
+    background-color: #FFA020;
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.inputSubmit:hover {
+    background-color: #FF8800;
+}
+
+
+.desktop-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-menu li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+
+.desktop-menu li a {
+    text-decoration: none;
+    color: #372F2F;
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+.desktop-menu li a:hover {
+    color: #FFA020;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px){
+
+
+    .logo {
+        width: 120px;
+    }
+
+    header {
+        padding: 0 10%;
+    }
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Hide mobile menu elements */
+    .nav-icons .menu-icon-container
+{
+        display: none;
+    }
+    
+    .desktop-menu li {
+        margin-left: 40px;
+    }
+
+
+    .slogan-container h2 {
+        font-size: 3rem;
+    }
+
+    .slogan-container h4 {
+        font-size: 1.8rem;
+    }
+    
+    section {
+        padding: 70px 15%;
+    }
+
+    .box {
+        margin-bottom: 50px;
+    }
+        
+
+
+    .card {
+        width: 48%;
+    }
+
+
+
+
+    /* First box (Yoga): paragraph on right, card on left */
+    .box:first-of-type .box-container {
+        flex-direction: row-reverse;
+    }
+
+
+    footer .container {
+        max-width: 1200px;
+    }
+
+    footer .row {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-col {
+        width: 20%;
+        padding-right: 15px;
+    }
+
+    .footer-col:last-child {
+        width: 30%;
+        margin-top: 0;
+    }
+
+    .footer-col form {
+        margin: 0;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .inputEmail {
+        width: 100%;
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+
+    .inputSubmit {
+        width: 50%;
+        border-radius: 30px;
+    }
+}
